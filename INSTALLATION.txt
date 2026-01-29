@@ -1,0 +1,279 @@
+╔══════════════════════════════════════════════════════════════╗
+║                                                              ║
+║          CLASS MANAGEMENT SYSTEM (CMS)                       ║
+║          Installation & Setup Guide                          ║
+║                                                              ║
+╚══════════════════════════════════════════════════════════════╝
+
+📋 QUICK START GUIDE
+═══════════════════════════════════════════════════════════════
+
+STEP 1: INSTALL XAMPP
+──────────────────────────────────────────────────────────────
+1. Download XAMPP from: https://www.apachefriends.org
+2. Install XAMPP to: C:\xampp
+3. Open XAMPP Control Panel
+4. Start Apache and MySQL services
+
+STEP 2: SETUP PROJECT FILES
+──────────────────────────────────────────────────────────────
+✓ Your project is already located at: C:\xampp\htdocs\CMS
+✓ All files are in place and ready to use
+
+STEP 3: CREATE DATABASE
+──────────────────────────────────────────────────────────────
+METHOD 1: Using phpMyAdmin (Recommended)
+1. Open browser and go to: http://localhost/phpmyadmin
+2. Click "Import" tab
+3. Click "Choose File"
+4. Select: C:\xampp\htdocs\CMS\database\cms_database.sql
+5. Click "Go" button
+6. Wait for success message
+
+METHOD 2: Manual Creation
+1. Open: http://localhost/phpmyadmin
+2. Click "New" to create database
+3. Database name: class_management_system
+4. Click "Create"
+5. Open the database
+6. Click "SQL" tab
+7. Copy contents of cms_database.sql
+8. Paste and click "Go"
+
+STEP 4: VERIFY DATABASE CONNECTION
+──────────────────────────────────────────────────────────────
+File: C:\xampp\htdocs\CMS\includes\config.php
+
+Default Settings:
+- Host: localhost
+- Username: root
+- Password: (empty)
+- Database: class_management_system
+
+If your MySQL has different credentials, update config.php
+
+STEP 5: ACCESS THE SYSTEM
+──────────────────────────────────────────────────────────────
+1. Open your web browser
+2. Go to: http://localhost/CMS
+3. You will see the homepage
+
+STEP 6: LOGIN
+──────────────────────────────────────────────────────────────
+Click "Login" button and use:
+
+👑 ADMIN LOGIN:
+   Username: admin
+   Password: admin123
+
+👨‍🏫 TEACHER LOGIN:
+   Username: teacher1
+   Password: teacher123
+
+🎓 STUDENT:
+   Click "Register as Student" to create new account
+
+═══════════════════════════════════════════════════════════════
+
+⚠️  IMPORTANT SECURITY NOTES
+═══════════════════════════════════════════════════════════════
+1. Change admin password after first login
+2. Default passwords are for testing only
+3. Use strong passwords in production
+4. Keep config.php secure
+
+═══════════════════════════════════════════════════════════════
+
+🎯 SYSTEM WORKFLOW
+═══════════════════════════════════════════════════════════════
+
+ADMIN WORKFLOW:
+1. Login as admin
+2. Add teachers from "Manage Teachers"
+3. Activate teacher accounts
+4. Monitor students and system
+
+TEACHER WORKFLOW:
+1. Login as teacher
+2. Create test from "Manage Tests"
+3. Add MCQ questions
+4. Publish the test
+5. Review student results
+6. Approve/Reject admissions
+
+STUDENT WORKFLOW:
+1. Register new account
+2. Login to dashboard
+3. View available tests
+4. Take admission test
+5. Submit and view results
+6. Check admission status
+
+═══════════════════════════════════════════════════════════════
+
+📊 DATABASE TABLES
+═══════════════════════════════════════════════════════════════
+✓ admins          - Admin accounts
+✓ teachers        - Teacher accounts
+✓ students        - Student accounts
+✓ tests           - Admission tests
+✓ questions       - MCQ questions
+✓ student_tests   - Test attempts
+✓ student_answers - Student answers
+✓ admissions      - Admission records
+
+═══════════════════════════════════════════════════════════════
+
+🔧 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════
+
+PROBLEM: Cannot access http://localhost/CMS
+SOLUTION:
+- Check if Apache is running in XAMPP
+- Check if folder is at C:\xampp\htdocs\CMS
+- Try: http://127.0.0.1/CMS
+
+PROBLEM: Database connection error
+SOLUTION:
+- Check if MySQL is running in XAMPP
+- Verify database name: class_management_system
+- Check credentials in config.php
+- Import database again
+
+PROBLEM: Login not working
+SOLUTION:
+- Clear browser cache
+- Check database has admin record
+- Verify password: admin123
+- Try different browser
+
+PROBLEM: Blank page or errors
+SOLUTION:
+- Check PHP error log in XAMPP
+- Enable error display in config.php
+- Check file permissions
+- Verify all files are uploaded
+
+PROBLEM: Test timer not working
+SOLUTION:
+- Enable JavaScript in browser
+- Clear browser cache
+- Try different browser
+- Check console for errors
+
+═══════════════════════════════════════════════════════════════
+
+📱 BROWSER REQUIREMENTS
+═══════════════════════════════════════════════════════════════
+✓ Google Chrome (Recommended)
+✓ Mozilla Firefox
+✓ Microsoft Edge
+✓ Safari
+✓ Opera
+
+JavaScript MUST be enabled
+
+═══════════════════════════════════════════════════════════════
+
+✅ TESTING CHECKLIST
+═══════════════════════════════════════════════════════════════
+[ ] XAMPP installed and running
+[ ] Apache service started
+[ ] MySQL service started
+[ ] Database created successfully
+[ ] Homepage loads at http://localhost/CMS
+[ ] Admin login works
+[ ] Teacher login works
+[ ] Student registration works
+[ ] Teacher can create tests
+[ ] Teacher can add questions
+[ ] Student can take test
+[ ] Test timer displays correctly
+[ ] Test submits successfully
+[ ] Results calculated correctly
+[ ] Teacher can approve/reject students
+
+═══════════════════════════════════════════════════════════════
+
+🌐 DEPLOYMENT TO LIVE SERVER
+═══════════════════════════════════════════════════════════════
+1. Upload all files to your hosting
+2. Create MySQL database
+3. Import cms_database.sql
+4. Update config.php with:
+   - Your database host
+   - Your database username
+   - Your database password
+   - Your database name
+   - Your site URL
+5. Set proper file permissions
+6. Test all functionality
+7. Change default passwords
+
+═══════════════════════════════════════════════════════════════
+
+📞 SUPPORT & HELP
+═══════════════════════════════════════════════════════════════
+1. Read README.md for detailed documentation
+2. Check troubleshooting section above
+3. Review code comments in files
+4. Test on local XAMPP first
+5. Check browser console for JavaScript errors
+6. Verify MySQL is running
+7. Check Apache error logs
+
+═══════════════════════════════════════════════════════════════
+
+🎓 FEATURES SUMMARY
+═══════════════════════════════════════════════════════════════
+✓ Role-based authentication (Admin, Teacher, Student)
+✓ Admin dashboard with statistics
+✓ Teacher management (add, activate, deactivate)
+✓ Student management and monitoring
+✓ Create and manage MCQ tests
+✓ Online test-taking with timer
+✓ Automatic result calculation
+✓ Admission approval workflow
+✓ Profile management
+✓ Responsive design
+✓ Modern UI/UX
+✓ Secure password hashing
+✓ SQL injection protection
+✓ Session management
+✓ Form validation
+
+═══════════════════════════════════════════════════════════════
+
+📄 FILE STRUCTURE
+═══════════════════════════════════════════════════════════════
+CMS/
+├── index.php                 (Homepage)
+├── README.md                 (Documentation)
+├── admin/                    (Admin panel files)
+├── teacher/                  (Teacher panel files)
+├── student/                  (Student panel files)
+├── auth/                     (Login, Register, Logout)
+├── assets/                   (CSS, JS, Images)
+├── includes/                 (Config, Functions, Headers)
+└── database/                 (SQL file)
+
+═══════════════════════════════════════════════════════════════
+
+🎉 YOU'RE ALL SET!
+═══════════════════════════════════════════════════════════════
+
+Your Class Management System is now ready to use!
+
+1. Go to: http://localhost/CMS
+2. Login with admin credentials
+3. Start managing your system
+
+Thank you for using Class Management System!
+
+═══════════════════════════════════════════════════════════════
+
+Version: 1.0
+Date: January 2026
+Developed with PHP, MySQL, HTML5, CSS3, JavaScript
+
+═══════════════════════════════════════════════════════════════
